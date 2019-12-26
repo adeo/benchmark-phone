@@ -1,0 +1,51 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+apply plugin: 'androidx.benchmark'
+
+android {
+    compileSdkVersion 29
+
+    defaultConfig {
+        minSdkVersion 14
+        targetSdkVersion 29
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            matchingFallbacks = ['release', 'debug']
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'benchmark-proguard-rules.pro'
+        }
+
+        dexOptions {
+            matchingFallbacks = ['release', 'debug']
+        }
+
+        release{
+            minifyEnabled true
+            matchingFallbacks = ['release', 'debug']
+            proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'benchmark-proguard-rules.pro'
+        }
+    }
+
+    kotlinOptions {
+        jvmTarget = "1.8"
+    }
+}
+
+dependencies {
+    implementation fileTree(dir: 'libs', include: ['*.jar'])
+
+    //ajout des projets pour faire des tests
+    androidTestImplementation project(path: ':android-amgp-lmfr', configuration:'default')
+
+
+    androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+    androidTestImplementation "androidx.benchmark:benchmark-junit4:$benchmark_version"
+
+    androidTestImplementation 'junit:junit:4.12'
+
+    androidTestImplementation 'androidx.test:runner:1.2.0'
+    androidTestImplementation 'androidx.test:rules:1.2.0'
+    androidTestImplementation 'androidx.test.ext:junit:1.1.1'
+}
