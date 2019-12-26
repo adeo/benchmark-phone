@@ -1,0 +1,6 @@
+[submodule "android-amgp-lmfr"]
+	path = android-amgp-lmfr
+	url = http://gitlab-xnet.fr.corp.leroymerlin.com/fr-lm-mobilite/android-amgp-lmfr.git
+[submodule "colibri-vente-android"]
+	path = colibri-vente-android
+	url = http://gitlab-xnet.fr.corp.leroymerlin.com/fr-lm-mobilite/colibri-vente-android.git

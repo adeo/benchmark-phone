@@ -35,6 +35,14 @@ allprojects {
             jvmTarget = "1.8"
         }
     }
+
+}
+
+task submodulesUpdate(type:Exec) {
+    description 'Updates (and inits) git submodules'
+    commandLine 'git', 'submodule', 'update', '--init', '--recursive'
+    group 'Build Setup'
+
 }
 
 task clean(type: Delete) {
