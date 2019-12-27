@@ -14,7 +14,7 @@ buildscript {
         mavenLM()
     }
     dependencies {
-        classpath "com.android.tools.build:gradle:3.5.1"
+        classpath 'com.android.tools.build:gradle:3.5.2'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.benchmark:benchmark-gradle-plugin:$benchmark_version"
         // NOTE: Do not place your application dependencies here; they belong
@@ -37,6 +37,8 @@ allprojects {
     }
 
 }
+
+
 
 task submodulesUpdate(type:Exec) {
     description 'Updates (and inits) git submodules'

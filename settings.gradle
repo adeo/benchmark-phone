@@ -1,4 +1,6 @@
-include ':benchmark', ':android-amgp-lmfr', ':colibri-vente-android', ':app'
+include ':benchmark',':ui'
+//rootProject.name = ':android-amgp-lmfr'
+//include ':app'
 //file('android-amgp-lmfr').eachDir { dir ->
 //    include dir.name
 //    project(":${dir.name}").projectDir = dir

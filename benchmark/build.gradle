@@ -37,7 +37,8 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //ajout des projets pour faire des tests
-    androidTestImplementation project(':colibri-vente-android')
+    //implementation project(':android-amgp-lmfr')
+    androidTestImplementation project(':ui')
 
 
     androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
