@@ -13,17 +13,10 @@ android {
     buildTypes {
         debug {
             minifyEnabled true
-            matchingFallbacks = ['release', 'debug']
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'benchmark-proguard-rules.pro'
         }
-
-        dexOptions {
-            matchingFallbacks = ['release', 'debug']
-        }
-
         release{
             minifyEnabled true
-            matchingFallbacks = ['release', 'debug']
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'benchmark-proguard-rules.pro'
         }
     }
@@ -37,8 +30,6 @@ dependencies {
     implementation fileTree(dir: 'libs', include: ['*.jar'])
 
     //ajout des projets pour faire des tests
-    //implementation project(':android-amgp-lmfr')
-    androidTestImplementation project(':ui')
 
 
     androidTestImplementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"

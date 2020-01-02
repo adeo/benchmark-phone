@@ -3,18 +3,13 @@
 buildscript {
     ext.kotlin_version = '1.3.50'
     ext.benchmark_version = '1.0.0'
-    ext.deliveryVersion = "3.3.3"
-    ext.pandroidVersion = "2.7.1"
-    ext.realmPlugin = "5.0.0"
-    ext.butterknife = "9.0.0"
 
     repositories {
         google()
         jcenter()
-        mavenLM()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath 'com.android.tools.build:gradle:3.5.3'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.benchmark:benchmark-gradle-plugin:$benchmark_version"
         // NOTE: Do not place your application dependencies here; they belong
@@ -27,7 +22,6 @@ allprojects {
         google()
         jcenter()
         mavenCentral()
-        mavenLM()
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
@@ -36,17 +30,4 @@ allprojects {
         }
     }
 
-}
-
-
-
-task submodulesUpdate(type:Exec) {
-    description 'Updates (and inits) git submodules'
-    commandLine 'git', 'submodule', 'update', '--init', '--recursive'
-    group 'Build Setup'
-
-}
-
-task clean(type: Delete) {
-    delete rootProject.buildDir
 }

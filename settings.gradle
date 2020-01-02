@@ -1,17 +1,1 @@
-include ':benchmark',':ui'
-//rootProject.name = ':android-amgp-lmfr'
-//include ':app'
-//file('android-amgp-lmfr').eachDir { dir ->
-//    include dir.name
-//    project(":${dir.name}").projectDir = dir
-//}
-//rootProject.name = 'android-amgp-lmfr'
-//include 'android-amgp-lmfr'
-//build ':android-amgp-lmfr'
-//project(':android-amgp-lmfr').projectDir = file('android-amgp-lmfr')
-//rootProject.name = 'android-amgp-lmfr'
-//file('android-amgp-lmfr').eachDir { dir ->
-//    include dir.name
-//    project(":${dir.name}").projectDir = dir
-//}
-
+include ':benchmark'
