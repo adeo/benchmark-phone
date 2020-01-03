@@ -1,6 +1,7 @@
 package com.mobility.benchmark.network
 
 import android.util.Log
+import androidx.benchmark.BenchmarkState
 import androidx.benchmark.junit4.BenchmarkRule
 import androidx.benchmark.junit4.measureRepeated
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -33,11 +34,11 @@ class NetworkBenchmark {
             .addCallAdapterFactory(RxJava2CallAdapterFactory.create()).build()
         val downloadService = retrofit.create(api::class.java)
         benchmarkRule.measureRepeated {
-            Log.d("download","bonjour")
             downloadService.downloadFile().subscribe({
                     writeResponseBodyToDisk(it.body()!!)
                 }, {})
         }
+        benchmarkRule.getState().
     }
 
     private fun writeResponseBodyToDisk(body: ResponseBody): Boolean {
@@ -51,12 +52,9 @@ class NetworkBenchmark {
                     if (read == -1) {
                         break
                     }
-                    Log.d("download","bonjour")
                 }
-                Log.d("download","test")
                 return true
             } catch (e: Exception) {
-                Log.d("download","${e}")
                 return false
             } finally {
                 inputStream?.close()
