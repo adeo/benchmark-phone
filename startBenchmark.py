@@ -27,7 +27,7 @@ def reportBenchmark():
     for file in glob.glob("*.xml"):
         sendEvent(file)
 
-        
+
 
 
 base_url = "http://benchmark-analytics-open.apps.op.acp.adeo.com/matomo.php"
