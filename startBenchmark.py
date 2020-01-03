@@ -11,4 +11,3 @@ for file in glob.glob("*.xml"):
     d = dict()
     for testcase in tree.findall("testcase"):
         d[testcase.get('name')] = testcase.get('time')
-    print(d)
