@@ -14,7 +14,7 @@
  * limitations under the License.
  */
 
-package com.example.benchmark
+package com.mobility.benchmark.cpu
 
 import androidx.benchmark.junit4.BenchmarkRule
 import androidx.benchmark.junit4.measureRepeated

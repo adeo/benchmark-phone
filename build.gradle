@@ -9,7 +9,7 @@ buildscript {
         jcenter()
     }
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.5.3'
+        classpath "com.android.tools.build:gradle:3.5.1"
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
         classpath "androidx.benchmark:benchmark-gradle-plugin:$benchmark_version"
         // NOTE: Do not place your application dependencies here; they belong
@@ -21,7 +21,6 @@ allprojects {
     repositories {
         google()
         jcenter()
-        mavenCentral()
     }
 
     tasks.withType(org.jetbrains.kotlin.gradle.tasks.KotlinCompile).all {
@@ -29,5 +28,8 @@ allprojects {
             jvmTarget = "1.8"
         }
     }
+}
 
+task clean(type: Delete) {
+    delete rootProject.buildDir
 }
